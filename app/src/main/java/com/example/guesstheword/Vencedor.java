@@ -27,8 +27,6 @@ public class Vencedor extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-                //Intent intent = new Intent(Vencedor.this, MainActivity.class);
-                //Vencedor.this.startActivity(intent);
             }
         });
 
