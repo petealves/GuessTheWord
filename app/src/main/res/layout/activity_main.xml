@@ -33,7 +33,6 @@
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
                     android:text="Letras:"
                     android:textColor="@android:color/black"
                     android:textSize="24sp"
@@ -43,7 +42,6 @@
                     android:id="@+id/txt_letras"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
                     android:editable="true"
                     android:paddingTop="40dp"
                     android:text="Letras:"
@@ -57,16 +55,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="40dp"
-                android:layout_weight="0"
-                android:orientation="vertical"
-                android:paddingBottom="60dp">
+                android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/txt_tentativa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:ems="10"
                     android:hint="Tentativa"
                     android:inputType="textPersonName"
                     android:textAlignment="center" />
@@ -84,7 +78,6 @@
                     android:id="@+id/btn_desistir"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
                     android:backgroundTint="@android:color/holo_red_dark"
                     android:text="Desistir" />
             </LinearLayout>

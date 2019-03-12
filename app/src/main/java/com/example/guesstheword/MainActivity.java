@@ -24,26 +24,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    /*private String[] palavras = {
-            "Programar",
-            "Java",
-            "Android",
-            "Vetores",
-            "Jogo",
-            "Ciclos",
-            "Batalha",
-            "Layout",
-            "Design",
-            "Escola"
-    };*/
-
     private ArrayList<String> palavras ;
     private Palavra palavra = new Palavra();
-
-
-
-
-    //Button desistir = findViewById(R.id.btn_desistir);
 
     int tentativas = 1;
 
@@ -78,51 +60,7 @@ public class MainActivity extends AppCompatActivity {
         handleGameLogic();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.app_bar_menu,menu);
-
-        return true;
-        //return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.add_palavra){
-            addPalavra();
-            return true;
-        }else{
-            return super.onOptionsItemSelected(item);
-        }
-
-    }
-
-    private void addPalavra(){
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setTitle("Adicionar Palavra");
-        final EditText addPalavra = new EditText(this);
-        alert.setView(addPalavra);
-        alert.setPositiveButton("Adicionar", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                String palavraInserida = addPalavra.getText().toString();
-                if(palavraInserida.equals("")){
-                    addPalavra.setError("Não pode estar vazio.");
-                }else{
-                    palavra.adicionarPalavra(palavraInserida.substring(0,1).toUpperCase() + palavraInserida.substring(1).toLowerCase());
-
-                }
-
-            }
-        });
-        alert.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                //Put actions for CANCEL button here, or leave in blank
-            }
-        });
-        alert.show();
-    }
 
     private String getPalavraJogo(){
 
@@ -202,5 +140,58 @@ public class MainActivity extends AppCompatActivity {
                 handleGameLogic();
             }
         });
+    }
+
+
+    //Parte 2 - Adicionar Palavras------------
+    //----------------------------------------
+    //----------------------------------------
+    //----------------------------------------
+    //----------------------------------------
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.app_bar_menu,menu);
+
+        return true;
+        //return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.add_palavra){
+            addPalavra();
+            return true;
+        }else{
+            return super.onOptionsItemSelected(item);
+        }
+
+    }
+
+    private void addPalavra(){
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Adicionar Palavra");
+        final EditText addPalavra = new EditText(this);
+        alert.setView(addPalavra);
+        alert.setPositiveButton("Adicionar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String palavraInserida = addPalavra.getText().toString();
+                if(palavraInserida.equals("")){
+                    addPalavra.setError("Não pode estar vazio.");
+                }else{
+                    palavra.adicionarPalavra(palavraInserida.substring(0,1).toUpperCase() + palavraInserida.substring(1).toLowerCase());
+
+                }
+
+            }
+        });
+        alert.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                //Put actions for CANCEL button here, or leave in blank
+            }
+        });
+        alert.show();
     }
 }
